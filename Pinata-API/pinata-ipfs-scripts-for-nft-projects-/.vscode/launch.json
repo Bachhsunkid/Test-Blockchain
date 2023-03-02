@@ -1,0 +1,53 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "pwa-node",
+      "request": "launch",
+      "name": "Download IPFS hash CIDs",
+      "outputCapture": "std",
+      "program": "${workspaceFolder}/src/download-cids.js",
+      "skipFiles": ["<node_internals>/**"],
+      "envFile": "${workspaceFolder}/.env"
+    },
+    {
+      "type": "pwa-node",
+      "request": "launch",
+      "name": "Calculate File IPFS hash CIDs",
+      "outputCapture": "std",
+      "program": "${workspaceFolder}/src/calculate-cids.js",
+      "skipFiles": ["<node_internals>/**"],
+      "envFile": "${workspaceFolder}/.env"
+    },
+    {
+      "type": "pwa-node",
+      "request": "launch",
+      "name": "Calculate File sha256 Hashes",
+      "outputCapture": "std",
+      "program": "${workspaceFolder}/src/calculate-hashes.js",
+      "skipFiles": ["<node_internals>/**"],
+      "envFile": "${workspaceFolder}/.env"
+    },
+    {
+      "type": "pwa-node",
+      "request": "launch",
+      "name": "Upload Files",
+      "outputCapture": "std",
+      "program": "${workspaceFolder}/src/upload-files.js",
+      "skipFiles": ["<node_internals>/**"],
+      "envFile": "${workspaceFolder}/.env"
+    },
+    {
+      "type": "pwa-node",
+      "request": "launch",
+      "name": "Upload Folder",
+      "outputCapture": "std",
+      "program": "${workspaceFolder}/src/upload-folder.js",
+      "skipFiles": ["<node_internals>/**"],
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}

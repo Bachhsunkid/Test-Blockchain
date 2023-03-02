@@ -1,0 +1,39 @@
+<input type="file" id="image-file">
+
+<button onclick="submitImage()">Submit</button>
+
+<script>
+  const apiKey = '3db7404898c7f0400623';
+  const apiUrl = 'https://api.pitana.ai/v1/cid';
+
+  function submitImage() {
+    const imageFile = document.getElementById('image-file').files[0];
+
+    // Create a FormData object to send the image file as binary data
+    const formData = new FormData();
+    formData.append('image', imageFile);
+
+    // Create the request headers, including the API key
+    const headers = new Headers();
+    headers.append('Authorization', 'Bearer ' + apiKey);
+
+    // Create the request object and set its method, headers, and body
+    const request = new Request(apiUrl, {
+      method: 'POST',
+      headers: headers,
+      body: formData
+    });
+
+    // Send the request to the API
+    fetch(request)
+      .then(response => response.json())
+      .then(data => {
+        // Extract the CID from the response and display it
+        const cid = data.cid;
+        console.log('CID:', cid);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+  }
+</script>
